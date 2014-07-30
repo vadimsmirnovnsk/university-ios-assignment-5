@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SENavigationSourceVC : UIViewController
+@interface SENavigationSourceVC : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UISlider *redSlider;
 @property (nonatomic, strong) IBOutlet UISlider *greenSlider;

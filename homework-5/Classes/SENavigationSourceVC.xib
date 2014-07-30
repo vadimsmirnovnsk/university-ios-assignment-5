@@ -51,20 +51,23 @@
                     </connections>
                 </slider>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-rY-Qdh">
-                    <rect key="frame" x="20" y="250" width="280" height="30"/>
+                    <rect key="frame" x="20" y="238" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dOS-vb-uIw"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sY3-lO-rKy" secondAttribute="trailing" constant="20" id="1u3-ps-oX3"/>
-                <constraint firstItem="RAF-rY-Qdh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k6n-ZV-xmn" secondAttribute="bottom" constant="15" id="45Y-LQ-awp"/>
+                <constraint firstItem="RAF-rY-Qdh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k6n-ZV-xmn" secondAttribute="bottom" constant="8" id="45Y-LQ-awp"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yR9-vn-SYq" secondAttribute="bottom" constant="50" id="940-S2-EUg"/>
                 <constraint firstItem="sY3-lO-rKy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="A1Z-Pu-MuL"/>
                 <constraint firstItem="pcu-0j-ACd" firstAttribute="width" secondItem="sY3-lO-rKy" secondAttribute="width" id="BJ9-8R-rIq"/>
-                <constraint firstItem="yR9-vn-SYq" firstAttribute="top" secondItem="RAF-rY-Qdh" secondAttribute="bottom" constant="10" id="FmR-Rv-3y8"/>
+                <constraint firstItem="yR9-vn-SYq" firstAttribute="top" secondItem="RAF-rY-Qdh" secondAttribute="bottom" constant="22" id="FmR-Rv-3y8"/>
                 <constraint firstItem="yR9-vn-SYq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="124" id="Ga3-iH-npT"/>
                 <constraint firstAttribute="trailing" secondItem="RAF-rY-Qdh" secondAttribute="trailing" constant="20" id="QaR-gd-fgN"/>
                 <constraint firstAttribute="trailing" secondItem="pcu-0j-ACd" secondAttribute="trailing" constant="20" id="S7a-4J-uqp"/>
@@ -77,7 +80,7 @@
                 <constraint firstAttribute="trailing" secondItem="k6n-ZV-xmn" secondAttribute="trailing" constant="20" id="ith-qg-jLy"/>
                 <constraint firstItem="sY3-lO-rKy" firstAttribute="height" relation="greaterThanOrEqual" secondItem="pcu-0j-ACd" secondAttribute="height" constant="10" id="jvj-5i-wOC"/>
                 <constraint firstAttribute="trailing" secondItem="yR9-vn-SYq" secondAttribute="trailing" constant="124" id="kzo-eT-AcK"/>
-                <constraint firstItem="RAF-rY-Qdh" firstAttribute="top" secondItem="k6n-ZV-xmn" secondAttribute="bottom" priority="1" constant="20" id="mS2-XY-B70"/>
+                <constraint firstItem="RAF-rY-Qdh" firstAttribute="top" secondItem="k6n-ZV-xmn" secondAttribute="bottom" priority="1" constant="8" id="mS2-XY-B70"/>
                 <constraint firstItem="pcu-0j-ACd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="500" constant="90" id="pVn-H6-LRy"/>
                 <constraint firstItem="pcu-0j-ACd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="u6Q-9Y-a78"/>
                 <constraint firstItem="k6n-ZV-xmn" firstAttribute="top" secondItem="sY3-lO-rKy" secondAttribute="bottom" constant="20" id="vHP-gm-yxM"/>

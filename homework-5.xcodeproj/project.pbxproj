@@ -31,6 +31,9 @@
 		CEA99273198661BD00CAB5AC /* padViewTabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9926F198661BC00CAB5AC /* padViewTabIcon@2x.png */; };
 		CEA9927F1986696A00CAB5AC /* SENavigationSourceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA9927D1986696A00CAB5AC /* SENavigationSourceVC.m */; };
 		CEA992801986696A00CAB5AC /* SENavigationSourceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9927E1986696A00CAB5AC /* SENavigationSourceVC.xib */; };
+		CEA9929B1989634E00CAB5AC /* UIColor+ColorFromHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA9929A1989634E00CAB5AC /* UIColor+ColorFromHexString.m */; };
+		CEA9929D19896F6D00CAB5AC /* SEAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA9929C19896F6D00CAB5AC /* SEAboutVC.xib */; };
+		CEA9929F1989750000CAB5AC /* x_252129db.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEA9929E1989750000CAB5AC /* x_252129db.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,10 @@
 		CEA9927C1986696A00CAB5AC /* SENavigationSourceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SENavigationSourceVC.h; path = "homework-5/Classes/SENavigationSourceVC.h"; sourceTree = "<group>"; };
 		CEA9927D1986696A00CAB5AC /* SENavigationSourceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SENavigationSourceVC.m; path = "homework-5/Classes/SENavigationSourceVC.m"; sourceTree = "<group>"; };
 		CEA9927E1986696A00CAB5AC /* SENavigationSourceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SENavigationSourceVC.xib; path = "homework-5/Classes/SENavigationSourceVC.xib"; sourceTree = "<group>"; };
+		CEA992991989634E00CAB5AC /* UIColor+ColorFromHexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ColorFromHexString.h"; path = "homework-5/Classes/UIColor+ColorFromHexString.h"; sourceTree = "<group>"; };
+		CEA9929A1989634E00CAB5AC /* UIColor+ColorFromHexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ColorFromHexString.m"; path = "homework-5/Classes/UIColor+ColorFromHexString.m"; sourceTree = "<group>"; };
+		CEA9929C19896F6D00CAB5AC /* SEAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SEAboutVC.xib; sourceTree = "<group>"; };
+		CEA9929E1989750000CAB5AC /* x_252129db.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = x_252129db.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +190,9 @@
 				CEA9927C1986696A00CAB5AC /* SENavigationSourceVC.h */,
 				CEA9927D1986696A00CAB5AC /* SENavigationSourceVC.m */,
 				CEA9927E1986696A00CAB5AC /* SENavigationSourceVC.xib */,
+				CEA9929C19896F6D00CAB5AC /* SEAboutVC.xib */,
+				CEA992991989634E00CAB5AC /* UIColor+ColorFromHexString.h */,
+				CEA9929A1989634E00CAB5AC /* UIColor+ColorFromHexString.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 		CEA9926719865ED900CAB5AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEA9929E1989750000CAB5AC /* x_252129db.jpg */,
 				CEA9926C198661BC00CAB5AC /* pencil.png */,
 				CEA9926D198661BC00CAB5AC /* pencil@2x.png */,
 				CEA9926E198661BC00CAB5AC /* padViewTabIcon.png */,
@@ -281,7 +292,9 @@
 				CEA99273198661BD00CAB5AC /* padViewTabIcon@2x.png in Resources */,
 				CEA9923B19864F5900CAB5AC /* InfoPlist.strings in Resources */,
 				CEA9926B19865EEC00CAB5AC /* fileCabinet@2x.png in Resources */,
+				CEA9929F1989750000CAB5AC /* x_252129db.jpg in Resources */,
 				CEA9924619864F5900CAB5AC /* Images.xcassets in Resources */,
+				CEA9929D19896F6D00CAB5AC /* SEAboutVC.xib in Resources */,
 				CEA9926A19865EEC00CAB5AC /* fileCabinet.png in Resources */,
 				CEA992801986696A00CAB5AC /* SENavigationSourceVC.xib in Resources */,
 				CEA99272198661BD00CAB5AC /* padViewTabIcon.png in Resources */,
@@ -305,6 +318,7 @@
 			files = (
 				CEA9924119864F5900CAB5AC /* SEAppDelegate.m in Sources */,
 				CEA9923D19864F5900CAB5AC /* main.m in Sources */,
+				CEA9929B1989634E00CAB5AC /* UIColor+ColorFromHexString.m in Sources */,
 				CEA9927F1986696A00CAB5AC /* SENavigationSourceVC.m in Sources */,
 				CEA992661986565B00CAB5AC /* SEAboutVC.m in Sources */,
 				CEA9924419864F5900CAB5AC /* homework_5.xcdatamodeld in Sources */,

@@ -10,4 +10,8 @@
 
 @interface SEAboutVC : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextView *text;
+
+- (IBAction)hitAlert:(id)sender;
+
 @end
