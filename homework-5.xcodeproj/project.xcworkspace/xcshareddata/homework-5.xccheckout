@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>212320E0-EBD2-4A8F-9E23-DA8CCEBE7785</string>
+	<key>IDESourceControlProjectName</key>
+	<string>homework-5</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0B76FCEF-1C3C-4B66-8908-B605825BFCE4</key>
+		<string>https://github.com/vadimsmirnovnsk/university-ios-assignment-5.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>homework-5.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0B76FCEF-1C3C-4B66-8908-B605825BFCE4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vadimsmirnovnsk/university-ios-assignment-5.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0B76FCEF-1C3C-4B66-8908-B605825BFCE4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0B76FCEF-1C3C-4B66-8908-B605825BFCE4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>university-ios-assignment-5</string>
+		</dict>
+	</array>
+</dict>
+</plist>
