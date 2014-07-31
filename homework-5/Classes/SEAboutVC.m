@@ -8,6 +8,14 @@
 
 #import "SEAboutVC.h"
 
+@interface SEAboutVC ()
+
+@property (nonatomic, strong) IBOutlet UITextView *text;
+
+- (IBAction)hitAlert:(id)sender;
+
+@end
+
 @implementation SEAboutVC
 
 
@@ -15,9 +23,6 @@
 {
     if (self=[super init]) {
     // self.title = @"About";
-    self.tabBarItem.image = [UIImage imageNamed:@"pencil"];
-    self.view.backgroundColor = [UIColor colorWithRed:(CGFloat)240.0/255.0
-        green:(CGFloat)240.0/255.0 blue:(CGFloat)240.0/255.0 alpha:1.0];
     }
     return self;
 }

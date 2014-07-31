@@ -31,4 +31,26 @@
         alpha:0.9];
 }
 
+
++ (UIColor *) rhythmusBackgroundColor
+{
+    return [UIColor colorWithRed:(CGFloat){220.0/256.0} green:(CGFloat){220.0/256.0}
+            blue:(CGFloat){220.0/256.0} alpha:(CGFloat){1.0}];
+}
+
++ (UIColor *) rhythmusTapBarColor
+{
+    return [UIColor colorWithRed:(CGFloat){184.0/256.0} green:(CGFloat){184.0/256.0}
+            blue:(CGFloat){184.0/256.0} alpha:(CGFloat){1.0}];
+}
+
+
++ (UIColor *) rhythmusNavBarColor
+{
+    return [UIColor colorWithRed:(CGFloat){186.0/256.0} green:(CGFloat){186.0/256.0}
+            blue:(CGFloat){186.0/256.0} alpha:(CGFloat){1.0}];
+}
+
+
+
 @end

@@ -10,12 +10,4 @@
 
 @interface SENavigationSourceVC : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UISlider *redSlider;
-@property (nonatomic, strong) IBOutlet UISlider *greenSlider;
-@property (nonatomic, strong) IBOutlet UISlider *blueSlider;
-
-- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-    number:(NSNumber *)levelNumber;
-- (IBAction)updateViewColor:(id)sender;
-
 @end

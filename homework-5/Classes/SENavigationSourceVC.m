@@ -11,44 +11,46 @@
 
 @interface SENavigationSourceVC ()
 
-@property (nonatomic, strong) NSNumber *level;
+@property (nonatomic, strong) IBOutlet UISlider *redSlider;
+@property (nonatomic, strong) IBOutlet UISlider *greenSlider;
+@property (nonatomic, strong) IBOutlet UISlider *blueSlider;
+
+- (IBAction)updateViewColor:(id)sender;
 
 @end
 
 @implementation SENavigationSourceVC
 
 
-- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-    number:(NSNumber *)levelNumber
-{
-    if (self=[super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    _level = levelNumber;
-    self.title = [NSString stringWithFormat:@"Level: %i",[_level intValue]];
-    }
-    return self;
+- (void)viewWillAppear:(BOOL)animated {
+     self.title = [NSString stringWithFormat:@"Level: %i",
+        [self.navigationController.viewControllers count]];
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value green:self.greenSlider.value blue:self.blueSlider.value alpha:0.9];
+    self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value
+        green:self.greenSlider.value blue:self.blueSlider.value alpha:0.9];
 }
 
 - (IBAction)pushView:(id)sender
 {
-    [self.navigationController pushViewController:[[SENavigationSourceVC alloc]initWithNibName:self.nibName bundle:self.nibBundle number:[NSNumber numberWithInt:[_level intValue]+1]] animated:YES];
+    SENavigationSourceVC *pushController = [[SENavigationSourceVC alloc]init];
+    [self.navigationController pushViewController:pushController animated:YES];
 }
 
 - (void)updateViewColor:(id)sender
 {
+// self.navigationController.navigationItem.titleView
   self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value
     green:self.greenSlider.value blue:self.blueSlider.value alpha:0.9];  
 }
 
 
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:
+    (NSRange)range replacementString:(NSString *)string
 {
     NSCharacterSet *chars = [[NSCharacterSet 
         characterSetWithCharactersInString:@"0123456789ABCDEF"] invertedSet];
@@ -63,7 +65,8 @@
 {
     self.view.backgroundColor = [UIColor colorWithHexString:[textField text]];
     CGFloat redCompose, greenCompose, blueCompose, alpha;
-    [self.view.backgroundColor getRed:&redCompose green:&greenCompose blue:&blueCompose alpha:&alpha];
+    [self.view.backgroundColor getRed:&redCompose green:&greenCompose
+        blue:&blueCompose alpha:&alpha];
     [_redSlider setValue:redCompose animated:YES];
     [_greenSlider setValue:greenCompose animated:YES];
     [_blueSlider setValue:blueCompose animated:YES];

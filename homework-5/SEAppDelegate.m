@@ -9,6 +9,7 @@
 #import "SEAppDelegate.h"
 #import "SEAboutVC.h"
 #import "SENavigationSourceVC.h"
+#import "UIColor+ColorFromHexString.h"
 
 @interface SEAppDelegate ()
 
@@ -21,53 +22,45 @@
 
 @implementation SEAppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    _rootTabBarController = [[UITabBarController alloc]init];
+    self.rootTabBarController = [[UITabBarController alloc]init];
     [self.window setRootViewController:_rootTabBarController];
     
-    [_rootTabBarController.view setBackgroundColor:
-        [UIColor colorWithRed:(CGFloat){220.0/256.0} green:(CGFloat){220.0/256.0}
-            blue:(CGFloat){220.0/256.0} alpha:(CGFloat){1.0}]];
-    [_rootTabBarController.tabBar setBarTintColor:
-        [UIColor colorWithRed:(CGFloat){184.0/256.0} green:(CGFloat){184.0/256.0}
-            blue:(CGFloat){184.0/256.0} alpha:(CGFloat){1.0}]];
+    [self.rootTabBarController.view setBackgroundColor:
+        [UIColor rhythmusBackgroundColor]];
+    [self.rootTabBarController.tabBar setBarTintColor:
+        [UIColor rhythmusTapBarColor]];
     
-    _firstTabNC = [[UINavigationController alloc]initWithRootViewController:
-        [[SENavigationSourceVC alloc]initWithNibName:nil bundle:nil number:@(0)]];
-    _firstTabNC.tabBarItem.imageInsets = (UIEdgeInsets) {
+    SENavigationSourceVC *firstSource = [[SENavigationSourceVC alloc]init];
+    self.firstTabNC = [[UINavigationController alloc]initWithRootViewController:firstSource];
+    self.firstTabNC.tabBarItem.imageInsets = (UIEdgeInsets) {
         5, 0, -5, 0
     };
             
-    _secondTabNC = [[UINavigationController alloc]initWithRootViewController:
-        [[SENavigationSourceVC alloc]initWithNibName:nil bundle:nil number:@(0)]];
-    _secondTabNC.tabBarItem.imageInsets = (UIEdgeInsets) {
+    SENavigationSourceVC *secondSource = [[SENavigationSourceVC alloc]init];
+    self.secondTabNC = [[UINavigationController alloc]initWithRootViewController:secondSource];
+    self.secondTabNC.tabBarItem.imageInsets = (UIEdgeInsets) {
         5, 0, -5, 0
     };
-    _thirdTabVC = [[SEAboutVC alloc]init];
-    _thirdTabVC.tabBarItem.imageInsets = (UIEdgeInsets) {
+    self.thirdTabVC = [[SEAboutVC alloc]init];
+    self.thirdTabVC.tabBarItem.image = [UIImage imageNamed:@"pencil"];
+    self.thirdTabVC.view.backgroundColor = [UIColor rhythmusBackgroundColor];
+    self.thirdTabVC.tabBarItem.imageInsets = (UIEdgeInsets) {
         5, 0, -5, 0
     };
+
+    [self.firstTabNC.navigationBar setBarTintColor:[UIColor rhythmusNavBarColor]];
+    self.firstTabNC.tabBarItem.image = [UIImage imageNamed:@"fileCabinet"];
+    self.firstTabNC.tabBarItem.title = @"";
     
-    [_firstTabNC.navigationBar setBarTintColor:
-    [UIColor colorWithRed:(CGFloat){186.0/256.0} green:(CGFloat){186.0/256.0}
-            blue:(CGFloat){186.0/256.0} alpha:(CGFloat){1.0}]];
-    _firstTabNC.tabBarItem.image = [UIImage imageNamed:@"fileCabinet"];
-    _firstTabNC.tabBarItem.title = @"";
+    [self.secondTabNC.navigationBar setBarTintColor:[UIColor rhythmusNavBarColor]];
+    self.secondTabNC.tabBarItem.image = [UIImage imageNamed:@"padViewTabIcon"];
+    self.secondTabNC.tabBarItem.title = @"";
     
-    [_secondTabNC.navigationBar setBarTintColor:
-    [UIColor colorWithRed:(CGFloat){186.0/256.0} green:(CGFloat){186.0/256.0}
-            blue:(CGFloat){186.0/256.0} alpha:(CGFloat){1.0}]];
-    _secondTabNC.tabBarItem.image = [UIImage imageNamed:@"padViewTabIcon"];
-    _secondTabNC.tabBarItem.title = @"";
-    
-    [_rootTabBarController setViewControllers:@[_firstTabNC, _secondTabNC, _thirdTabVC]];
+    [self.rootTabBarController setViewControllers:@[_firstTabNC, _secondTabNC, _thirdTabVC]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -114,79 +107,6 @@
             abort();
         } 
     }
-}
-
-#pragma mark - Core Data stack
-
-// Returns the managed object context for the application.
-// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return _managedObjectContext;
-}
-
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"homework_5" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"homework_5.sqlite"];
-    
-    NSError *error = nil;
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
-    
-    return _persistentStoreCoordinator;
 }
 
 #pragma mark - Application's Documents directory

@@ -11,5 +11,8 @@
 @interface UIColor (ColorFromHexString)
 
 + (UIColor *) colorWithHexString:(NSString *)string;
++ (UIColor *) rhythmusBackgroundColor;
++ (UIColor *) rhythmusTapBarColor;
++ (UIColor *) rhythmusNavBarColor;
 
 @end
